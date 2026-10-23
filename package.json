@@ -1,0 +1,13 @@
+{
+  "name": "tbd-hooks-lab",
+  "version": "1.0.0",
+  "description": "Учебный проект: Trunk-Based воркфлоу и pre-commit hooks",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "license": "ISC"
+}
