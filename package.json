@@ -13,11 +13,10 @@
     ]
   },
   "scripts": {
-    "test": "node --test",
-    "lint": "eslint .",
-    "format": "prettier --write .",
+    "lint": "eslint . --max-warnings 0",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info --test-reporter=spec --test-reporter-destination=stdout"
   },
   "license": "ISC",
   "devDependencies": {
