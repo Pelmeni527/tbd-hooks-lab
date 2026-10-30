@@ -1,32 +1,21 @@
 {
-  "name": "tbd-hooks-lab",
+  "name": "contract-ci-lab",
   "version": "1.0.0",
-  "description": "Учебный проект: Trunk-Based воркфлоу и pre-commit hooks",
+  "private": true,
+  "description": "Учебный проект: CI и контрактное тестирование API",
+  "main": "src/server.js",
   "type": "module",
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,yml,yaml}": [
-      "prettier --write"
-    ]
-  },
   "scripts": {
+    "start": "node src/server.js",
     "lint": "eslint . --max-warnings 0",
-    "format:check": "prettier --check .",
-    "test": "node --test",
-    "test:coverage": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info --test-reporter=spec --test-reporter-destination=stdout"
+    "test": "node --test src/**/*.test.js",
+    "test:unit": "node --test src/**/*.test.js",
+    "test:ci": "node --test --experimental-test-coverage src/**/*.test.js",
+    "build": "node scripts/build.js"
   },
-  "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^21.2.4",
-    "@commitlint/config-conventional": "^21.2.4",
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.13.0",
-    "globals": "^17.13.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
-    "prettier": "^3.9.10"
+    "@babel/core": "^8.0.10",
+    "@babel/preset-env": "^8.0.7",
+    "babel-jest": "^30.5.2"
   }
 }
